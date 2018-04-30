@@ -1,0 +1,30 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MPEG Dash Player</title>
+</head>
+<body>
+	<video id=example-video width=600 height=300 class="video-js vjs-default-skin" controls></video>
+	<script src="videojs.js"></script>
+
+	<!-- Dash.js -->
+	<script src="video-dash.all.min.js"></script>
+
+	<!-- videojs-contrib-dash script -->
+	<script src="videojs-contrib-dash.min.js"></script>
+
+	<script>
+	var player = videojs('example-video');
+
+	player.ready(function() {
+	  player.src({
+	    src: 'http://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd',
+	    type: 'application/dash+xml'
+	  });
+
+	  player.play();
+	});
+	</script>
+	
+</body>
+</html>
